@@ -11,11 +11,11 @@ const NavigationBar = () => {
   };
 
   const SignInButton = () => (
-    <Button variant="success" onClick={signInWithGoogle}>Sign in</Button>
+    <Button variant="success" onClick={signInWithGoogle}>Sign In</Button>
   );
   
   const SignOutButton = () => (
-    <Button variant="danger" onClick={signOut}>Sign out</Button>
+    <Button variant="danger" onClick={signOut}>Sign Out</Button>
   );
   
   const AuthButton = () => {
@@ -26,7 +26,7 @@ const NavigationBar = () => {
   const activation = ({isActive}) => isActive ? 'active' : 'inactive';
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top">
       <Container>
         <Navbar.Brand as={Link} to="/">
           PetConnect
