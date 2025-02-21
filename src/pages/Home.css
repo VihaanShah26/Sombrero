@@ -1,0 +1,84 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Home Container */
+  .home-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background: linear-gradient(to right, #1354e1, #0fcfec);
+    z-index: -1;
+  }
+  
+  /* Header */
+  .home-header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 80%;
+    transition: transform 0.3s ease;
+  }
+  
+  .home-header:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Title */
+  .home-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Subtitle */
+  .home-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Button */
+  .create-profile-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #0d36db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .create-profile-btn:hover {
+    background-color: #3428d2;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .home-title {
+      font-size: 1.8rem;
+    }
+  
+    .home-subtitle {
+      font-size: 1rem;
+    }
+  
+    .create-profile-btn {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
