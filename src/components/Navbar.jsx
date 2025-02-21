@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Button, NavDropdown } from "react-bootstrap";
+import { signInWithGoogle, signOut, useAuthState } from "./firebase";
 
 const NavigationBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -8,6 +9,21 @@ const NavigationBar = () => {
   const handleAuth = () => {
     setIsLoggedIn(!isLoggedIn);
   };
+
+  const SignInButton = () => (
+    <Button variant="success" onClick={signInWithGoogle}>Sign in</Button>
+  );
+  
+  const SignOutButton = () => (
+    <Button variant="danger" onClick={signOut}>Sign out</Button>
+  );
+  
+  const AuthButton = () => {
+    const [user] = useAuthState();
+    return user ? <SignOutButton /> : <SignInButton />;
+  };
+  
+  const activation = ({isActive}) => isActive ? 'active' : 'inactive';
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -29,13 +45,9 @@ const NavigationBar = () => {
                 Pet Sitter
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/profile">
-              Profile
-            </Nav.Link>
+            <Nav.Link as={Link} to="/profile"> Profile </Nav.Link>
           </Nav>
-          <Button variant={isLoggedIn ? "danger" : "success"} onClick={handleAuth}>
-            {isLoggedIn ? "Sign Out" : "Sign In"}
-          </Button>
+          <AuthButton />
         </Navbar.Collapse>
       </Container>
     </Navbar>

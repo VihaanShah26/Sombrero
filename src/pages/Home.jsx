@@ -12,7 +12,7 @@ const Home = () => {
     <div className="home-container">
       <header className="home-header">
         <h1 className="home-title">Welcome to PetConnect</h1>
-        <p className="home-subtitle">Connecting pet owners with trusted pet sitters.</p>
+        <p className="home-subtitle">Connecting pet owners with trusted pet sitters  within the Northwestern community.</p>
       </header>
     </div>
   );
