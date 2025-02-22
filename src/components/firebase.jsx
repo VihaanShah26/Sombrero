@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { useEffect, useState } from 'react';
 import { get, getDatabase, onValue, ref, update } from 'firebase/database';
+import { getFirestore } from 'firebase/firestore';
 import { useCallback } from 'react';
 import { getAuth, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
 
@@ -22,6 +23,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const database = getDatabase(app);
+export const db = getFirestore(app);
+
 
 export const signInWithGoogle = () => {
     signInWithPopup(getAuth(app), new GoogleAuthProvider());

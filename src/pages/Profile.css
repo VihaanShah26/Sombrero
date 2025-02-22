@@ -4,44 +4,49 @@
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
-    z-index: -1;
-}
-
-.profile-form {
+  }
+  .profile-container h2 {
+    text-align: center;
+  }
+  
+  /* Profile Form with Scrollable Content */
+  .profile-form {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
+    max-height: 500px;  /* Set a max height */
+    overflow-y: auto;  /* Enable vertical scrolling */
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.profile-form h2 {
+  }
+  
+  .profile-form h2 {
     text-align: center;
     color: #333;
-}
-
-.profile-form label {
+  }
+  
+  .profile-form label {
     font-weight: bold;
     color: #555;
-}
-
-.profile-form input,
-.profile-form textarea,
-.profile-form select {
+  }
+  
+  .profile-form input,
+  .profile-form textarea,
+  .profile-form select {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-}
-
-.profile-form textarea {
+  }
+  
+  .profile-form textarea {
     resize: none;
-}
-
-.save-btn {
+  }
+  
+  .save-btn {
     background-color: #28a745;
     color: white;
     padding: 10px;
@@ -50,14 +55,22 @@
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-}
-
-.save-btn:hover {
+  }
+  
+  .save-btn:hover {
     background-color: #218838;
-}
-
-.not-signed-in {
+  }
+  
+  .not-signed-in {
     font-size: 1.5rem;
     color: red;
     text-align: center;
-}
+  }
+  
+  /* Make sure the form is scrollable on small screens */
+  @media (max-width: 768px) {
+    .profile-form {
+      width: 90%;
+      max-height: 400px;
+    }
+  }

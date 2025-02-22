@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'; 
 import Profile from './pages/Profile';
 import NavigationBar from "./components/Navbar";
+import Calendar from './pages/Calendar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </Router>
   );
