@@ -9,7 +9,10 @@ const Profile = () => {
     first: "",
     last: "",
     address: "",
+    phone: "",
+    emergency: "",
     about: "",
+    radius: 5,
     hours: 0,
     pay: 0,
     role: "Owner",
@@ -71,8 +74,17 @@ const Profile = () => {
           <label>Last Name:</label>
           <input type="text" name="last" value={formData.last} onChange={handleChange} required />
 
+          <label>Phone Number:</label>
+          <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
+
+          <label>Emergency Contact (Name, Phone Number):</label>
+          <input type="text" name="emergency" value={formData.emergency} onChange={handleChange} required />
+
           <label>Address:</label>
           <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+
+          <label>Match within (radius in miles):</label>
+          <input type="number" name="radius" value={formData.radius} onChange={handleChange} required />
 
           <label>Bio:</label>
           <input name="about" value={formData.about} onChange={handleChange} required />
@@ -83,10 +95,10 @@ const Profile = () => {
             <option value="Sitter">Dog Sitter</option>
           </select>
 
-          <label>Duration (average hours):</label>
+          <label>Desired Duration (average hours):</label>
           <input type="number" name="hours" value={formData.hours} onChange={handleChange} required />
 
-          <label>Pay (avergae $/hr):</label>
+          <label>{formData.role=="Owner" ? "Willingness to Pay ($/hr)" : "Desired Salary ($/hr)"}</label>
           <input type="number" name="pay" value={formData.pay} onChange={handleChange} required />
 
           <button type="submit" className="save-btn">Save</button>

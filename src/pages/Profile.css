@@ -15,8 +15,8 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-height: 500px;  /* Set a max height */
+    width: 30vw;
+    max-height: 60vh;  /* Set a max height */
     overflow-y: auto;  /* Enable vertical scrolling */
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@
   /* Make sure the form is scrollable on small screens */
   @media (max-width: 768px) {
     .profile-form {
-      width: 90%;
-      max-height: 400px;
+      width: 80vw;
+      max-height: 60vh;
     }
   }

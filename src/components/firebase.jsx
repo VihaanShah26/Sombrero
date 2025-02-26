@@ -25,12 +25,18 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 export const db = getFirestore(app);
 
-
-export const signInWithGoogle = () => {
-    signInWithPopup(getAuth(app), new GoogleAuthProvider());
-};
-
 const firebaseSignOut = () => signOut(getAuth(app));
+
+export const signInWithGoogle = async () => {
+    const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider());
+    const user = result.user;
+    console.log(user.email);
+    if (!user.email.endsWith("northwestern.edu")) {
+        alert("Only Northwestern University email ids are allowed.");
+        firebaseSignOut();
+        return;
+      }
+};
 
 export { firebaseSignOut as signOut };
 
