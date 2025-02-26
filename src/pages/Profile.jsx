@@ -68,11 +68,11 @@ const Profile = () => {
         <div>
         <h2>Update Your Profile</h2>
         <form className="profile-form" onSubmit={handleSubmit}>
-          <label>First Name:</label>
+          <label>First Name</label>
           <input type="text" name="first" value={formData.first} onChange={handleChange} required />
 
-          <label>Last Name:</label>
-          <input type="text" name="last" value={formData.last} onChange={handleChange} required />
+          <label>Last Name (Optional)</label>
+          <input type="text" name="last" value={formData.last} onChange={handleChange} />
 
           <label>Phone Number:</label>
           <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
@@ -86,7 +86,9 @@ const Profile = () => {
           <label>Match within (radius in miles):</label>
           <input type="number" name="radius" value={formData.radius} onChange={handleChange} required />
 
-          <label>Bio:</label>
+          <label>Bio
+          <i className="bi bi-info-circle info-icon" title="Enter a bit about yourself and about your dog - their breed, what they are like and what care do they require. Mention anything important about your dog."></i>
+          </label>
           <input name="about" value={formData.about} onChange={handleChange} required />
 
           <label>Role:</label>

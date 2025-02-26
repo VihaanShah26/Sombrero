@@ -4,6 +4,7 @@ import Profile from './pages/Profile';
 import NavigationBar from "./components/Navbar";
 import Calendar from './pages/Calendar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const App = () => {
   return (
