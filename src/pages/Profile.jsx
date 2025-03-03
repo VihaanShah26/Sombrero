@@ -55,7 +55,12 @@ const Profile = () => {
     try {
       const userId = auth.currentUser.email; // Using email as document ID
       await setDoc(doc(db, "profiles", userId), formData, { merge: true });
-      alert("Profile updated successfully!");
+      if (formData.role == "Sitter") {
+        alert("Profile updated successfully! Since you have indicated you are interested in Dog-Sitting, we will get in touch with you shortly to complete an onboarding process wherein you will be provided important information and guidelines.")
+      }
+      else {
+        alert("Profile updated successfully!");
+      }
     } catch (error) {
       console.error("Error updating profile:", error);
       alert("Error updating profile. Try again.");
@@ -99,7 +104,7 @@ const Profile = () => {
 
           <label>Desired Duration (average hours):</label>
           <input type="number" name="hours" value={formData.hours} onChange={handleChange} required />
-
+          
           <label>{formData.role=="Owner" ? "Willingness to Pay ($/hr)" : "Desired Salary ($/hr)"}</label>
           <input type="number" name="pay" value={formData.pay} onChange={handleChange} required />
 
