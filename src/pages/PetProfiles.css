@@ -1,0 +1,128 @@
+.pet-profiles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f7fa;
+  }
+  
+  .pet-profiles-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .pet-profiles-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #f06292;
+  }
+  
+  .pet-profiles-header p {
+    font-size: 1rem;
+    color: #757575;
+  }
+  
+  .card-container {
+    width: 90vw;
+    max-width: 400px;
+    height: 60vh;
+    position: relative;
+  }
+  
+  .swipe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .card-content h2 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  .pet-info {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .owner-info {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+  
+  .bio {
+    margin: 10px 0 5px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .swipe-info {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #f06292;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .buttons button {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .buttons button:first-child {
+    background-color: #ff6b6b;
+    color: white;
+  }
+  
+  .buttons button:last-child {
+    background-color: #4ecdc4;
+    color: white;
+  }
+  
+  .buttons button:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 600px) {
+    .card-container {
+      height: 50vh;
+    }
+  }
