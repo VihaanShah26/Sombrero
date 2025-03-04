@@ -45,6 +45,7 @@ const NavigationBar = () => {
                 Pet Sitter
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link as={Link} to="/messages">Messages</Nav.Link>
             <Nav.Link as={Link} to="/profile"> Profile </Nav.Link>
           </Nav>
           <AuthButton />

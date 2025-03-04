@@ -20,6 +20,7 @@ const Profile = () => {
 
   const [user] = useAuthState();
   const isLoggedIn = user ? true : false;
+  var firstTime = true;
 
   useEffect(() => {
     if (isLoggedIn && auth.currentUser) {
@@ -30,6 +31,7 @@ const Profile = () => {
         try {
           const profileSnap = await getDoc(profileRef);
           if (profileSnap.exists()) {
+            firstTime = false;
             setFormData(profileSnap.data());
           }
         } catch (error) {
@@ -38,6 +40,7 @@ const Profile = () => {
       };
 
       fetchProfile();
+      console.log(firstTime);
     }
   }, [isLoggedIn]);
 
