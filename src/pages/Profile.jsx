@@ -111,6 +111,9 @@ const Profile = () => {
           <label>{formData.role=="Owner" ? "Willingness to Pay ($/hr)" : "Desired Salary ($/hr)"}</label>
           <input type="number" name="pay" value={formData.pay} onChange={handleChange} required />
 
+          <label>{formData.role == "Owner" ? "Upload Profile Picture" : "Upload Dog Picture"}</label>
+          <input type="file" name="image" accept="image/*" />
+
           <button type="submit" className="save-btn">Save</button>
         </form>
         </div>
