@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import TinderCard from 'react-tinder-card';
 import './PetProfiles.css';
 
-const PetProfiles = () => {
+const PetProfilesSitter = () => {
   // Sample profiles data - replace with your actual data
   const [profiles, setProfiles] = useState([
     {
@@ -94,7 +94,7 @@ const PetProfiles = () => {
     <div className="pet-profiles-container">
       <header className="pet-profiles-header">
         <h1>PetConnect</h1>
-        <p>Find pet sitters in the Northwestern community</p>
+        <p>Find pets to sit in the Northwestern community</p>
       </header>
 
       <div className="card-container">
@@ -132,4 +132,4 @@ const PetProfiles = () => {
   );
 };
 
-export default PetProfiles;
+export default PetProfilesSitter;
