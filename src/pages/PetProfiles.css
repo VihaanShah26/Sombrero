@@ -11,7 +11,7 @@
   
   .pet-profiles-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin: auto;
     color: #333;
   }
   
@@ -29,7 +29,7 @@
   .card-container {
     width: 90vw;
     max-width: 400px;
-    height: 60vh;
+    height: 50vh;
     position: relative;
   }
   
@@ -50,8 +50,6 @@
   }
   
   .card-content {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     color: white;
