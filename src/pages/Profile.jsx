@@ -94,16 +94,16 @@ const Profile = () => {
           <label>Match within (radius in miles):</label>
           <input type="number" name="radius" value={formData.radius} onChange={handleChange} required />
 
-          <label>Bio
-          <i className="bi bi-info-circle info-icon" title="Enter a bit about yourself and about your dog - their breed, what they are like and what care do they require. Mention anything important about your dog."></i>
-          </label>
-          <input name="about" value={formData.about} onChange={handleChange} required />
-
           <label>Role:</label>
           <select name="role" value={formData.role} onChange={handleChange}>
             <option value="Owner">Dog Owner</option>
             <option value="Sitter">Dog Sitter</option>
           </select>
+
+          <label>Bio
+          <i className="bi bi-info-circle info-icon" title={formData.role == "Owner" ? "Enter a bit about yourself and about your dog - their breed, what they are like and what care do they require. Mention anything important about your dog." : "Enter your qualifications (like years of experience sitting or number of dogs owned)"}></i>
+          </label>
+          <input name="about" value={formData.about} onChange={handleChange} required />
 
           <label>Desired Duration (average hours):</label>
           <input type="number" name="hours" value={formData.hours} onChange={handleChange} required />
