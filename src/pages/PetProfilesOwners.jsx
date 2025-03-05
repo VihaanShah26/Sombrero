@@ -6,56 +6,67 @@ const PetProfilesOwners = () => {
   // Sample profiles data - replace with your actual data
   const [profiles, setProfiles] = useState([
     {
-      id: 1,
-      name: 'Charlie',
-      age: '3 years',
-      type: 'Dog',
-      breed: 'Golden Retriever',
-      owner: 'Alex Johnson',
-      bio: 'Friendly and energetic, loves playing fetch in the park.',
-      imageUrl: 'https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      "id": 1,
+      "name": "Charlie",
+      "age": "4 years",
+      "type": "Dog",
+      "breed": "Labrador Retriever",
+      "owner": "Mia",
+      "bio": "Friendly and energetic, loves playing fetch in the park.",
+      "imageUrl": "https://placedog.net/500/280?id=15"
     },
     {
-      id: 2,
-      name: 'Luna',
-      age: '2 years',
-      type: 'Cat',
-      breed: 'Maine Coon',
-      owner: 'Sam Taylor',
-      bio: 'Independent but affectionate. Enjoys window watching and chasing toys.',
-      imageUrl: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      "id": 2,
+      "name": "Duke",
+      "age": "6 years",
+      "type": "Dog",
+      "breed": "German Shepherd",
+      "owner": "Tom",
+      "bio": "Loyal and protective, enjoys long walks and playtime.",
+      "imageUrl": "https://placedog.net/500/280?id=25"
     },
     {
-      id: 3,
-      name: 'Max',
-      age: '4 years',
-      type: 'Dog',
-      breed: 'Border Collie',
-      owner: 'Jamie Wilson',
-      bio: 'Very intelligent and active. Needs lots of mental stimulation and exercise.',
-      imageUrl: 'https://images.unsplash.com/photo-1551717743-49959800b1f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      "id": 3,
+      "name": "Rocky",
+      "age": "1 year",
+      "type": "Dog",
+      "breed": "Golden Retriever Shepherd",
+      "owner": "Ethan",
+      "bio": "Playful and curious, loves exploring new places.",
+      "imageUrl": "https://placedog.net/500/280?id=35"
     },
     {
-      id: 4,
-      name: 'Bella',
-      age: '1 year',
-      type: 'Cat',
-      breed: 'Siamese',
-      owner: 'Taylor Reed',
-      bio: 'Playful and vocal. Loves attention and interactive toys.',
-      imageUrl: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      "id": 4,
+      "name": "Luna",
+      "age": "5 years",
+      "type": "Dog",
+      "breed": "Australian Shepherd",
+      "owner": "Sarah",
+      "bio": "Intelligent and agile, excels in obedience and agility.",
+      "imageUrl": "https://placedog.net/500/280?id=45"
     },
     {
-      id: 5,
-      name: 'Rocky',
-      age: '5 years',
-      type: 'Dog',
-      breed: 'Labrador',
-      owner: 'Jordan Smith',
-      bio: 'Calm and well-trained. Great with kids and other animals.',
-      imageUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      "id": 5,
+      "name": "Bailey",
+      "age": "3 years",
+      "type": "Dog",
+      "breed": "Boxer",
+      "owner": "Jason",
+      "bio": "Energetic and affectionate, loves companionship.",
+      "imageUrl": "https://placedog.net/500/280?id=55"
     },
-  ]);
+    {
+      "id": 6,
+      "name": "Milo",
+      "age": "7 years",
+      "type": "Dog",
+      "breed": "Poodle mix",
+      "owner": "Olivia",
+      "bio": "Calm and friendly, enjoys relaxing and short walks.",
+      "imageUrl": "https://placedog.net/500/280?id=65"
+    }
+  ]
+  );
   
   const [lastDirection, setLastDirection] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(profiles.length - 1);
