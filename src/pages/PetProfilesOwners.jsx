@@ -65,8 +65,7 @@ const PetProfilesOwners = () => {
       "bio": "Calm and friendly, enjoys relaxing and short walks.",
       "imageUrl": "https://placedog.net/500/280?id=65"
     }
-  ]
-  );
+  ]);
   
   const [lastDirection, setLastDirection] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(profiles.length - 1);
@@ -104,8 +103,6 @@ const PetProfilesOwners = () => {
   return (
     <div className="pet-profiles-container">
       <header className="pet-profiles-header">
-        <h1>PetConnect</h1>
-        <p>Find pets to sit in the Northwestern community</p>
       </header>
 
       <div className="card-container">
@@ -116,6 +113,7 @@ const PetProfilesOwners = () => {
             key={profile.id}
             onSwipe={(dir) => swiped(dir, profile.name, index)}
             onCardLeftScreen={() => outOfFrame(profile.name, index)}
+            preventSwipe={['up', 'down']}
           >
             <div className="card" style={{ backgroundImage: `url(${profile.imageUrl})` }}>
               <div className="card-content">
@@ -129,15 +127,15 @@ const PetProfilesOwners = () => {
         ))}
       </div>
 
-      {lastDirection && currentIndex >= -1 && (
+      {lastDirection && (
         <div className="swipe-info">
-          You swiped {lastDirection}
+          {lastDirection === 'right' ? 'You liked this pet!' : 'Maybe next time!'}
         </div>
       )}
 
       <div className="buttons">
-        <button onClick={() => swipe('left')}>Swipe Left</button>
-        <button onClick={() => swipe('right')}>Swipe Right</button>
+        <button onClick={() => swipe('left')}>✕</button>
+        <button onClick={() => swipe('right')}>✓</button>
       </div>
     </div>
   );

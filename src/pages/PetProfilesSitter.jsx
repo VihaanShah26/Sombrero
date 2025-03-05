@@ -88,8 +88,6 @@ const PetSitters = () => {
   return (
     <div className="pet-sitters-container">
       <header className="pet-sitters-header">
-        <h1>Pet Sitters</h1>
-        <p>Find trusted pet sitters in the Northwestern community</p>
       </header>
 
       <div className="card-container">
