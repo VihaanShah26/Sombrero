@@ -1,87 +1,82 @@
 import { useState, useRef } from 'react';
 import TinderCard from 'react-tinder-card';
-import './PetProfiles.css';
+import './PetSitters.css';
 
-const PetProfilesSitter = () => {
-  // Sample profiles data - replace with your actual data
-  const [profiles, setProfiles] = useState([
+const PetSitters = () => {
+  // Pet sitters data with cartoon avatars
+  const [sitters, setSitters] = useState([
     {
       id: 1,
-      name: 'Charlie',
-      age: '3 years',
-      type: 'Dog',
-      breed: 'Golden Retriever',
-      owner: 'Alex Johnson',
-      bio: 'Friendly and energetic, loves playing fetch in the park.',
-      imageUrl: 'https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: "Emma",
+      distance: "< 1 mi",
+      bio: "Northwestern sophomore studying biology, loves animals",
+      experience: "4 years",
+      rate: "$12/hr",
+      imageUrl: "https://img.freepik.com/free-vector/cute-girl-character_1450-155.jpg"
     },
     {
       id: 2,
-      name: 'Luna',
-      age: '2 years',
-      type: 'Cat',
-      breed: 'Maine Coon',
-      owner: 'Sam Taylor',
-      bio: 'Independent but affectionate. Enjoys window watching and chasing toys.',
-      imageUrl: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: "Jake",
+      distance: "8 mi",
+      bio: "Longtime pet-sitter in the Chicago area, happy to travel",
+      experience: "6 years",
+      rate: "$12/hr",
+      imageUrl: "https://img.freepik.com/free-vector/young-man-face-cartoon-character-avatar_18591-55055.jpg"
     },
     {
       id: 3,
-      name: 'Max',
-      age: '4 years',
-      type: 'Dog',
-      breed: 'Border Collie',
-      owner: 'Jamie Wilson',
-      bio: 'Very intelligent and active. Needs lots of mental stimulation and exercise.',
-      imageUrl: 'https://images.unsplash.com/photo-1551717743-49959800b1f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: "Ryan",
+      distance: "< 1 mi",
+      bio: "Senior at Northwestern, grew up with dogs and cats",
+      experience: "5 years",
+      rate: "$13/hr",
+      imageUrl: "https://img.freepik.com/free-vector/young-man-face-close-up_1450-125.jpg"
     },
     {
       id: 4,
-      name: 'Bella',
-      age: '1 year',
-      type: 'Cat',
-      breed: 'Siamese',
-      owner: 'Taylor Reed',
-      bio: 'Playful and vocal. Loves attention and interactive toys.',
-      imageUrl: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: "Laura",
+      distance: "< 1 mi",
+      bio: "Local resident, full-time freelancer with flexible hours",
+      experience: "5 years",
+      rate: "$15/hr",
+      imageUrl: "https://img.freepik.com/free-vector/beautiful-young-woman-avatar-character-icon-vector-illustration-design_24877-18520.jpg"
     },
     {
       id: 5,
-      name: 'Rocky',
-      age: '5 years',
-      type: 'Dog',
-      breed: 'Labrador',
-      owner: 'Jordan Smith',
-      bio: 'Calm and well-trained. Great with kids and other animals.',
-      imageUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: "Daniel",
+      distance: "< 1 mi",
+      bio: "Longtime Evanston resident, available for last-minute bookings",
+      experience: "8 years",
+      rate: "$16/hr",
+      imageUrl: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+    },
+    {
+      id: 6,
+      name: "Sophie",
+      distance: "10 mi",
+      bio: "Works remotely, happy to travel for pet-sitting",
+      experience: "8 years",
+      rate: "$13/hr",
+      imageUrl: "https://img.freepik.com/free-vector/girl-face-avatar_1450-553.jpg"
     },
   ]);
   
   const [lastDirection, setLastDirection] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(profiles.length - 1);
-  const currentIndexRef = useRef(currentIndex);
+  const [currentIndex, setCurrentIndex] = useState(sitters.length - 1);
   
-  const childRefs = Array(profiles.length)
+  const childRefs = Array(sitters.length)
     .fill(0)
     .map(() => useRef());
-
-  const updateCurrentIndex = (val) => {
-    setCurrentIndex(val);
-    currentIndexRef.current = val;
-  };
 
   // Handle when a card is swiped
   const swiped = (direction, nameToDelete, index) => {
     setLastDirection(direction);
-    updateCurrentIndex(index - 1);
-    
-    // Here you could implement logic for matching or saving preferences
-    console.log(`You swiped ${direction} on ${nameToDelete}`);
+    setCurrentIndex(index - 1);
   };
 
   // Handle when a card leaves the screen
-  const outOfFrame = (name, idx) => {
-    console.log(`${name} (${idx}) left the screen!`);
+  const outOfFrame = (name) => {
+    console.log(`${name} left the screen!`);
   };
 
   // Handle manual swipe buttons
@@ -91,45 +86,68 @@ const PetProfilesSitter = () => {
   };
 
   return (
-    <div className="pet-profiles-container">
-      <header className="pet-profiles-header">
-        <h1>PetConnect</h1>
-        <p>Find pets to sit in the Northwestern community</p>
+    <div className="pet-sitters-container">
+      <header className="pet-sitters-header">
       </header>
 
       <div className="card-container">
-        {profiles.map((profile, index) => (
+        {sitters.map((sitter, index) => (
           <TinderCard
             ref={childRefs[index]}
             className="swipe"
-            key={profile.id}
-            onSwipe={(dir) => swiped(dir, profile.name, index)}
-            onCardLeftScreen={() => outOfFrame(profile.name, index)}
+            key={sitter.id}
+            onSwipe={(dir) => swiped(dir, sitter.name, index)}
+            onCardLeftScreen={() => outOfFrame(sitter.name)}
+            preventSwipe={['up', 'down']}
           >
-            <div className="card" style={{ backgroundImage: `url(${profile.imageUrl})` }}>
+            <div className="card">
+              <div className="card-avatar" style={{ backgroundImage: `url(${sitter.imageUrl})` }}>
+              </div>
               <div className="card-content">
-                <h2>{profile.name}</h2>
-                <p className="pet-info">{profile.type} • {profile.breed} • {profile.age}</p>
-                <p className="owner-info">Owner: {profile.owner}</p>
-                <p className="bio">{profile.bio}</p>
+                <div className="card-header">
+                  <h2>{sitter.name}</h2>
+                  <span className="distance">{sitter.distance}</span>
+                </div>
+                <div className="card-details">
+                  <p className="bio">{sitter.bio}</p>
+                  <div className="stats">
+                    <div className="stat">
+                      <span className="stat-label">Experience:</span>
+                      <span className="stat-value">{sitter.experience}</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-label">Rate:</span>
+                      <span className="stat-value">{sitter.rate}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </TinderCard>
         ))}
       </div>
 
-      {lastDirection && currentIndex >= -1 && (
+      {lastDirection && (
         <div className="swipe-info">
           You swiped {lastDirection}
         </div>
       )}
 
       <div className="buttons">
-        <button onClick={() => swipe('left')}>Swipe Left</button>
-        <button onClick={() => swipe('right')}>Swipe Right</button>
+        <button className="decline-button" onClick={() => swipe('left')}>
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <button className="accept-button" onClick={() => swipe('right')}>
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
   );
 };
 
-export default PetProfilesSitter;
+export default PetSitters;
