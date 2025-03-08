@@ -1,0 +1,101 @@
+.listings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    margin-top: 6vh;
+  }
+  
+  .listings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .sort-dropdown {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Scrollable listings container */
+  .listings-scroll {
+    width: 80%;
+    max-width: 900px;
+    overflow-y: auto;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 10px;
+  }
+  
+  /* Individual listing card */
+  .listing-card {
+    display: flex;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .listing-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .dog-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .listing-details {
+    flex-grow: 1;
+  }
+  
+  .listing-details h3 {
+    margin: 0;
+    color: #007bff;
+  }
+  
+  .listing-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .listings-header {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    .listings-scroll {
+      width: 95%;
+    }
+  
+    .listing-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .dog-image {
+      margin-bottom: 10px;
+    }
+  }

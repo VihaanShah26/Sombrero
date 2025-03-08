@@ -1,0 +1,57 @@
+.sitters-container {
+    padding: 20px;
+    margin-top: 6vh;
+  }
+  
+  .sitters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sort-dropdown {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .sitters-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .sitter-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sitter-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .sitter-details {
+    padding: 15px;
+  }
+  
+  .sitter-details h3 {
+    margin-top: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .sitters-scroll {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .sitter-card {
+      width: 100%;
+    }
+  }

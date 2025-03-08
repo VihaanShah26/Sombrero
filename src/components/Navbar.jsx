@@ -37,6 +37,7 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/calendar">Calendar</Nav.Link>
             <Nav.Link as={Link} to="/view-listings">View Listings</Nav.Link>
+            <Nav.Link as={Link} to="/view-sitters">View Sitters</Nav.Link>
             <NavDropdown title="Community" id="community-dropdown">
               <NavDropdown.Item as={Link} to="/community/pet-owner">
                 Pet Owner

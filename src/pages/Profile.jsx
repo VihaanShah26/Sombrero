@@ -15,6 +15,7 @@ const Profile = () => {
     radius: 5,
     hours: 0,
     pay: 0,
+    experience: 0,
     role: "Owner",
   });
 
@@ -107,6 +108,13 @@ const Profile = () => {
 
           <label>Desired Duration (average hours):</label>
           <input type="number" name="hours" value={formData.hours} onChange={handleChange} required />
+          
+          {formData.role == "Sitter" ? 
+          <>
+          <label>Past Experience (in years):</label>
+          <input type="number" name="experience" value={formData.experience} onChange={handleChange} required />
+          </>
+          : <div />}
           
           <label>{formData.role=="Owner" ? "Willingness to Pay ($/hr)" : "Desired Salary ($/hr)"}</label>
           <input type="number" name="pay" value={formData.pay} onChange={handleChange} required />
