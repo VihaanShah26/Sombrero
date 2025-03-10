@@ -124,6 +124,14 @@ const Profile = () => {
 
           <button type="submit" className="save-btn">Save</button>
         </form>
+        <div style={{ textAlign: "center", paddingTop: "20px" }}>
+          <button 
+            className="btn btn-primary" 
+            onClick={() => window.location.href = 'https://docs.google.com/document/d/1jOB7xh1nFFoyFo1xhn8ucZskisizaa9TiTIs9llMVEo/edit?tab=t.0'}
+          >
+            View Onboarding Guidelines
+          </button>
+        </div>
         </div>
       ) : (
         <p className="not-signed-in">Please sign in first</p>
