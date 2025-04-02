@@ -31,11 +31,11 @@ export const signInWithGoogle = async () => {
     const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider());
     const user = result.user;
     console.log(user.email);
-    if (!user.email.endsWith("northwestern.edu")) {
-        alert("Only Northwestern University email ids are allowed.");
-        firebaseSignOut();
-        return;
-      }
+    // if (!user.email.endsWith("northwestern.edu")) {
+    //     alert("Only Northwestern University email ids are allowed.");
+    //     firebaseSignOut();
+    //     return;
+    //   }
 };
 
 export { firebaseSignOut as signOut };
