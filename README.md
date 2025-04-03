@@ -1,6 +1,6 @@
 # 🐾 PetConnect
 
-**PetConnect** is a full-stack web application designed to connect pet owners and pet sitters in a community-driven platform. Whether you're looking for someone to care for your furry friend or offering your own pet-sitting services, PetConnect provides an intuitive, real-time interface for communication and coordination. The website can be viewed at [text](https://hci-sombrero.web.app).
+**PetConnect** is a full-stack web application designed to connect pet owners and pet sitters in a community-driven platform. Whether you're looking for someone to care for your furry friend or offering your own pet-sitting services, PetConnect provides an intuitive, real-time interface for communication and coordination. The website can be viewed at [https://hci-sombrero.web.ap](https://hci-sombrero.web.app).
 
 ---
 
